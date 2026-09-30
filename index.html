@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Billionaire Tech | Cloud, Network & Identity Services | Memphis, TN</title>
 <meta name="description" content="Billionaire Tech is a Memphis, TN small business providing cloud infrastructure, network operations, and identity and access management. NAICS 541512 and 518210.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2313233F'/><rect x='8' y='7' width='16' height='5' rx='1' fill='%23E6D8BC'/><rect x='8' y='14' width='16' height='5' rx='1' fill='%23E6D8BC'/><rect x='8' y='21' width='16' height='5' rx='1' fill='%23E6D8BC'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2313233F'/><rect x='8' y='7' width='16' height='5' rx='1' fill='%23EFE4CF'/><rect x='8' y='14' width='16' height='5' rx='1' fill='%23EFE4CF'/><rect x='8' y='21' width='16' height='5' rx='1' fill='%23EFE4CF'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -14,9 +14,12 @@
   --navy:#13233F;
   --navy-deep:#0B172B;
   --navy-soft:#2A3D5E;
-  --beige:#E6D8BC;
-  --beige-light:#F3ECDD;
-  --sand:#B89A63;
+  --beige:#EFE4CF;
+  --burgundy:#7A1F2E;
+  --burgundy-deep:#5C1622;
+  --rose:#C0616F;
+  --beige-light:#F8F2E6;
+  --sand:#C0616F;
   --ink:#1A2233;
   --head:"Sora","Trebuchet MS",sans-serif;
   --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
@@ -47,8 +50,8 @@ h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
 .codes{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
 .code{border:1.5px solid var(--sand);border-radius:6px;padding:8px 14px;font-family:var(--head);font-weight:500;font-size:.95rem;color:var(--beige)}
 .code b{color:#fff;font-weight:700;margin-left:6px}
-.btn{display:inline-block;background:var(--beige);color:var(--navy);font-family:var(--head);font-weight:700;font-size:1rem;padding:14px 24px;border-radius:6px;text-decoration:none}
-.btn:hover{background:#fff}
+.btn{display:inline-block;background:var(--burgundy);color:var(--beige);border:1.5px solid var(--rose);font-family:var(--head);font-weight:700;font-size:1rem;padding:14px 24px;border-radius:6px;text-decoration:none}
+.btn:hover{background:var(--burgundy-deep)}
 .led{animation:blink 3.2s infinite}
 .led.d2{animation-delay:1.1s}.led.d3{animation-delay:2.2s}
 @keyframes blink{0%,70%,100%{opacity:1}80%{opacity:.25}}
@@ -61,15 +64,19 @@ section.block{padding:96px 0}
 .head-row p{margin:0;max-width:56ch;color:#3A4459}
 
 /* Competencies: a rack of units */
-.rack{border:2px solid var(--navy);border-radius:10px;background:#fff;overflow:hidden}
+.rack{border:2px solid var(--navy);border-left:8px solid var(--burgundy);border-radius:10px;background:#fff;overflow:hidden}
 .unit{display:grid;grid-template-columns:56px 1fr 1.4fr;gap:24px;align-items:center;padding:22px 28px;border-top:1px solid #DCCFB4}
 .unit:first-child{border-top:0}
-.unit svg{width:40px;height:40px;color:var(--navy)}
+.unit svg{width:40px;height:40px;color:var(--burgundy)}
 .unit h3{font-size:1.15rem;color:var(--navy)}
 .unit p{margin:0;color:#3A4459}
 
 /* Past performance */
-.pp{background:var(--beige)}
+.pp{background:var(--burgundy);color:var(--beige)}
+.pp .case h3,.pp h2{color:#fff!important}
+.pp p[style]{color:var(--beige)!important}
+.flow span.step{background:var(--beige)!important;color:var(--burgundy)!important}
+.flow span.arrow{color:var(--beige)!important}
 .case{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .case h3{font-size:1.6rem;color:var(--navy);margin-bottom:14px}
 .case p{margin:0 0 14px;max-width:52ch}
@@ -96,7 +103,7 @@ section.block{padding:96px 0}
 .contact p{margin:0;max-width:44ch;color:#3A4459}
 .lines{display:flex;flex-direction:column;gap:14px}
 .lines a{display:flex;align-items:center;gap:14px;text-decoration:none;background:#fff;border:2px solid var(--navy);border-radius:8px;padding:16px 20px;font-family:var(--head);font-weight:500;color:var(--navy);word-break:break-all}
-.lines a:hover{background:var(--navy);color:var(--beige)}
+.lines a:hover{background:var(--burgundy);border-color:var(--burgundy);color:var(--beige)}
 .lines svg{width:22px;height:22px;flex:none}
 .contact p.who{font-size:1rem;color:var(--navy);font-weight:600;margin-top:16px}
 
@@ -147,7 +154,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <rect x="20" y="154" width="46" height="4"/><rect x="20" y="196" width="46" height="4"/><rect x="20" y="238" width="46" height="4"/>
           <rect x="20" y="280" width="46" height="4"/><rect x="20" y="322" width="46" height="4"/><rect x="20" y="364" width="46" height="4"/>
         </g>
-        <g fill="#E6D8BC">
+        <g fill="#EFE4CF">
           <circle class="led" cx="92" cy="31" r="3"/><circle class="led d2" cx="92" cy="73" r="3"/><circle class="led d3" cx="92" cy="115" r="3"/>
           <circle class="led d2" cx="92" cy="157" r="3"/><circle class="led" cx="92" cy="199" r="3"/><circle class="led d3" cx="92" cy="241" r="3"/>
           <circle class="led" cx="92" cy="283" r="3"/><circle class="led d2" cx="92" cy="325" r="3"/><circle class="led d3" cx="92" cy="367" r="3"/>
@@ -158,6 +165,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </g>
       </g>
     </defs>
+    <g transform="translate(0,80)">
     <!-- floor grid -->
     <g stroke="#1B2E50" stroke-width="1">
       <line x1="0" y1="560" x2="1200" y2="560"/><line x1="0" y1="590" x2="1200" y2="590"/>
@@ -170,13 +178,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <use href="#rack" x="1120" y="140"/>
     <!-- overhead cable tray and network links -->
     <rect x="540" y="92" width="700" height="10" fill="#1D3358"/>
-    <g stroke="#B89A63" stroke-width="1.5" fill="none" opacity=".75">
+    <g stroke="#C0616F" stroke-width="1.5" fill="none" opacity=".75">
       <path d="M620 102 V140"/><path d="M760 102 V140"/><path d="M900 102 V140"/><path d="M1040 102 V140"/><path d="M1180 102 V140"/>
       <path d="M620 60 L760 30 L900 60 L1040 30 L1180 60"/>
       <path d="M620 60 L620 92 M760 30 L760 92 M900 60 L900 92 M1040 30 L1040 92"/>
     </g>
-    <g fill="#E6D8BC">
+    <g fill="#EFE4CF">
       <circle cx="620" cy="60" r="5"/><circle cx="760" cy="30" r="5"/><circle cx="900" cy="60" r="5"/><circle cx="1040" cy="30" r="5"/><circle cx="1180" cy="60" r="5"/>
+    </g>
     </g>
   </svg>
 
