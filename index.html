@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Billionaire Tech | Cloud, Network & Identity Services | Memphis, TN</title>
+<meta name="description" content="Billionaire Tech is a Memphis, TN small business providing cloud infrastructure, network operations, and identity and access management. NAICS 541512 and 518210.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2313233F'/><rect x='8' y='7' width='16' height='5' rx='1' fill='%23E6D8BC'/><rect x='8' y='14' width='16' height='5' rx='1' fill='%23E6D8BC'/><rect x='8' y='21' width='16' height='5' rx='1' fill='%23E6D8BC'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13233F;
+  --navy-deep:#0B172B;
+  --navy-soft:#2A3D5E;
+  --beige:#E6D8BC;
+  --beige-light:#F3ECDD;
+  --sand:#B89A63;
+  --ink:#1A2233;
+  --head:"Sora","Trebuchet MS",sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);font-size:1.125rem;line-height:1.6;color:var(--ink);background:var(--beige-light)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sand);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+
+/* Nav */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{font-family:var(--head);font-weight:800;color:var(--beige);text-decoration:none;font-size:1.15rem;letter-spacing:.01em}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--beige);text-decoration:none;font-size:1rem;opacity:.85}
+.nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+
+/* Hero */
+.hero{position:relative;background:var(--navy-deep);color:var(--beige);overflow:hidden;padding:150px 0 110px}
+.hero svg.dc{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy-deep) 0%,rgba(11,23,43,.92) 42%,rgba(11,23,43,.35) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:800;letter-spacing:-.02em;color:#fff;max-width:9ch}
+.hero p.lede{font-size:clamp(1.15rem,2vw,1.35rem);max-width:34ch;margin:22px 0 30px;color:var(--beige)}
+.codes{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.code{border:1.5px solid var(--sand);border-radius:6px;padding:8px 14px;font-family:var(--head);font-weight:500;font-size:.95rem;color:var(--beige)}
+.code b{color:#fff;font-weight:700;margin-left:6px}
+.btn{display:inline-block;background:var(--beige);color:var(--navy);font-family:var(--head);font-weight:700;font-size:1rem;padding:14px 24px;border-radius:6px;text-decoration:none}
+.btn:hover{background:#fff}
+.led{animation:blink 3.2s infinite}
+.led.d2{animation-delay:1.1s}.led.d3{animation-delay:2.2s}
+@keyframes blink{0%,70%,100%{opacity:1}80%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.led{animation:none}html{scroll-behavior:auto}}
+
+/* Sections */
+section.block{padding:96px 0}
+.head-row{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-bottom:48px;align-items:end}
+.head-row h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--navy)}
+.head-row p{margin:0;max-width:56ch;color:#3A4459}
+
+/* Competencies: a rack of units */
+.rack{border:2px solid var(--navy);border-radius:10px;background:#fff;overflow:hidden}
+.unit{display:grid;grid-template-columns:56px 1fr 1.4fr;gap:24px;align-items:center;padding:22px 28px;border-top:1px solid #DCCFB4}
+.unit:first-child{border-top:0}
+.unit svg{width:40px;height:40px;color:var(--navy)}
+.unit h3{font-size:1.15rem;color:var(--navy)}
+.unit p{margin:0;color:#3A4459}
+
+/* Past performance */
+.pp{background:var(--beige)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.case h3{font-size:1.6rem;color:var(--navy);margin-bottom:14px}
+.case p{margin:0 0 14px;max-width:52ch}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:var(--head);font-weight:500;font-size:.95rem}
+.flow span.step{background:var(--navy);color:var(--beige);padding:10px 14px;border-radius:6px}
+.flow span.arrow{color:var(--navy);font-weight:700}
+
+/* Company data */
+.data{background:var(--navy);color:var(--beige)}
+.data .head-row h2{color:#fff}
+.data .head-row p{color:var(--beige)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--navy-soft)}
+.fact{padding:26px 24px 26px 0;border-bottom:1px solid var(--navy-soft)}
+.fact dt{font-size:.95rem;color:var(--sand)}
+.fact dd{margin:4px 0 0;font-family:var(--head);font-weight:700;font-size:1.5rem;color:#fff}
+.diffs{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px}
+.diffs div{border-left:3px solid var(--sand);padding-left:18px}
+.diffs h3{font-size:1.1rem;color:#fff;margin-bottom:4px}
+.diffs p{margin:0;color:var(--beige)}
+
+/* Contact */
+.contact .card{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.contact h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--navy);margin-bottom:14px}
+.contact p{margin:0;max-width:44ch;color:#3A4459}
+.lines{display:flex;flex-direction:column;gap:14px}
+.lines a{display:flex;align-items:center;gap:14px;text-decoration:none;background:#fff;border:2px solid var(--navy);border-radius:8px;padding:16px 20px;font-family:var(--head);font-weight:500;color:var(--navy);word-break:break-all}
+.lines a:hover{background:var(--navy);color:var(--beige)}
+.lines svg{width:22px;height:22px;flex:none}
+.contact p.who{font-size:1rem;color:var(--navy);font-weight:600;margin-top:16px}
+
+footer{background:var(--navy-deep);color:var(--beige);font-size:.95rem;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .nav ul{display:none}
+  .head-row,.case,.contact .card{grid-template-columns:1fr;gap:20px}
+  .unit{grid-template-columns:44px 1fr;gap:6px 16px;padding:20px}
+  .unit p{grid-column:2}
+  .facts{grid-template-columns:1fr 1fr}
+  .diffs{grid-template-columns:1fr}
+  section.block{padding:72px 0}
+  .hero{padding:120px 0 80px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Billionaire Tech</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Past performance</a></li>
+      <li><a href="#company">Company data</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <!-- Datacenter background: server racks and network links -->
+  <svg class="dc" viewBox="0 0 1200 620" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <defs>
+      <g id="rack">
+        <rect width="120" height="420" rx="6" fill="#16284A" stroke="#2A3D5E" stroke-width="2"/>
+        <g fill="#1D3358" stroke="#2F4468">
+          <rect x="10" y="14" width="100" height="34" rx="3"/><rect x="10" y="56" width="100" height="34" rx="3"/>
+          <rect x="10" y="98" width="100" height="34" rx="3"/><rect x="10" y="140" width="100" height="34" rx="3"/>
+          <rect x="10" y="182" width="100" height="34" rx="3"/><rect x="10" y="224" width="100" height="34" rx="3"/>
+          <rect x="10" y="266" width="100" height="34" rx="3"/><rect x="10" y="308" width="100" height="34" rx="3"/>
+          <rect x="10" y="350" width="100" height="34" rx="3"/>
+        </g>
+        <g fill="#3B5075">
+          <rect x="20" y="28" width="46" height="4"/><rect x="20" y="70" width="46" height="4"/><rect x="20" y="112" width="46" height="4"/>
+          <rect x="20" y="154" width="46" height="4"/><rect x="20" y="196" width="46" height="4"/><rect x="20" y="238" width="46" height="4"/>
+          <rect x="20" y="280" width="46" height="4"/><rect x="20" y="322" width="46" height="4"/><rect x="20" y="364" width="46" height="4"/>
+        </g>
+        <g fill="#E6D8BC">
+          <circle class="led" cx="92" cy="31" r="3"/><circle class="led d2" cx="92" cy="73" r="3"/><circle class="led d3" cx="92" cy="115" r="3"/>
+          <circle class="led d2" cx="92" cy="157" r="3"/><circle class="led" cx="92" cy="199" r="3"/><circle class="led d3" cx="92" cy="241" r="3"/>
+          <circle class="led" cx="92" cy="283" r="3"/><circle class="led d2" cx="92" cy="325" r="3"/><circle class="led d3" cx="92" cy="367" r="3"/>
+        </g>
+        <g fill="#7FA3C9">
+          <circle class="led d3" cx="102" cy="31" r="3"/><circle class="led" cx="102" cy="115" r="3"/><circle class="led d2" cx="102" cy="199" r="3"/>
+          <circle class="led" cx="102" cy="283" r="3"/><circle class="led d3" cx="102" cy="367" r="3"/>
+        </g>
+      </g>
+    </defs>
+    <!-- floor grid -->
+    <g stroke="#1B2E50" stroke-width="1">
+      <line x1="0" y1="560" x2="1200" y2="560"/><line x1="0" y1="590" x2="1200" y2="590"/>
+      <line x1="560" y1="560" x2="520" y2="620"/><line x1="720" y1="560" x2="700" y2="620"/><line x1="880" y1="560" x2="880" y2="620"/><line x1="1040" y1="560" x2="1060" y2="620"/>
+    </g>
+    <use href="#rack" x="560" y="140"/>
+    <use href="#rack" x="700" y="140"/>
+    <use href="#rack" x="840" y="140"/>
+    <use href="#rack" x="980" y="140"/>
+    <use href="#rack" x="1120" y="140"/>
+    <!-- overhead cable tray and network links -->
+    <rect x="540" y="92" width="700" height="10" fill="#1D3358"/>
+    <g stroke="#B89A63" stroke-width="1.5" fill="none" opacity=".75">
+      <path d="M620 102 V140"/><path d="M760 102 V140"/><path d="M900 102 V140"/><path d="M1040 102 V140"/><path d="M1180 102 V140"/>
+      <path d="M620 60 L760 30 L900 60 L1040 30 L1180 60"/>
+      <path d="M620 60 L620 92 M760 30 L760 92 M900 60 L900 92 M1040 30 L1040 92"/>
+    </g>
+    <g fill="#E6D8BC">
+      <circle cx="620" cy="60" r="5"/><circle cx="760" cy="30" r="5"/><circle cx="900" cy="60" r="5"/><circle cx="1040" cy="30" r="5"/><circle cx="1180" cy="60" r="5"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <h1>Billionaire Tech</h1>
+    <p class="lede">Cloud infrastructure, network operations, and secure identity services for federal and commercial clients.</p>
+    <div class="codes" aria-label="NAICS codes">
+      <span class="code">NAICS <b>541512</b></span>
+      <span class="code">NAICS <b>518210</b></span>
+      <span class="code">Small business, Memphis TN</span>
+    </div>
+    <a class="btn" href="#contact">Contact Peggy Darnell</a>
+  </div>
+</header>
+
+<main>
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head-row">
+        <h2>Core competencies</h2>
+        <p>Hands-on Microsoft cloud, network, and identity work, delivered by a certified Azure administrator with seven years in enterprise and healthcare IT.</p>
+      </div>
+      <div class="rack">
+        <div class="unit">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 28h17a7 7 0 0 0 .6-14A10 10 0 0 0 10.4 17 5.6 5.6 0 0 0 12 28z"/></svg>
+          <h3>Azure cloud infrastructure</h3>
+          <p>Design, deployment, and administration of Azure environments, compute, storage, and governance.</p>
+        </div>
+        <div class="unit">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="8" r="4"/><circle cx="8" cy="32" r="4"/><circle cx="32" cy="32" r="4"/><path d="M18 12 10 28M22 12l8 16M12 32h16"/></svg>
+          <h3>Network operations and management</h3>
+          <p>Monitoring, troubleshooting, and support for enterprise network and cloud connectivity.</p>
+        </div>
+        <div class="unit">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4 7 9v10c0 8 5.6 14 13 17 7.4-3 13-9 13-17V9z"/><path d="m14 20 4 4 8-8"/></svg>
+          <h3>Identity and access management</h3>
+          <p>Okta, MFA, and least-privilege access controls for secure user environments.</p>
+        </div>
+        <div class="unit">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="14" height="12" rx="2"/><rect x="22" y="22" width="14" height="12" rx="2"/><path d="M11 18v5a3 3 0 0 0 3 3h8M29 22v-5a3 3 0 0 0-3-3h-8"/></svg>
+          <h3>Microsoft 365 modernization</h3>
+          <p>Microsoft Access to SharePoint and Power Platform migrations.</p>
+        </div>
+        <div class="unit">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 12-8 8 8 8M26 12l8 8-8 8M23 8l-6 24"/></svg>
+          <h3>Web apps and CI/CD</h3>
+          <p>Azure Static Web Apps with GitHub-based automated build and deploy pipelines.</p>
+        </div>
+        <div class="unit">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="28" height="10" rx="2"/><rect x="6" y="22" width="28" height="10" rx="2"/><path d="M11 11h2M11 27h2M20 11h9M20 27h9"/></svg>
+          <h3>Hosting and IT support</h3>
+          <p>Cloud hosting, help desk leadership, and support for regulated healthcare environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block pp" id="work">
+    <div class="wrap case">
+      <div>
+        <h2 style="font-size:clamp(2rem,4vw,2.8rem);color:var(--navy);margin-bottom:28px">Past performance</h2>
+        <h3>Nonprofit client website</h3>
+        <p>Built and deployed the client's website on Azure Static Web Apps, with GitHub-based CI/CD so every approved change releases automatically.</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:var(--navy)">How releases work</p>
+        <div class="flow" aria-label="Release pipeline">
+          <span class="step">Code change</span><span class="arrow" aria-hidden="true">&rsaquo;</span>
+          <span class="step">GitHub</span><span class="arrow" aria-hidden="true">&rsaquo;</span>
+          <span class="step">Automated build</span><span class="arrow" aria-hidden="true">&rsaquo;</span>
+          <span class="step">Azure Static Web Apps</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block data" id="company">
+    <div class="wrap">
+      <div class="head-row">
+        <h2>Company data</h2>
+        <p>Details for contracting officers and prime contractors.</p>
+      </div>
+      <dl class="facts">
+        <div class="fact"><dt>Primary NAICS</dt><dd>541512</dd></div>
+        <div class="fact"><dt>Secondary NAICS</dt><dd>518210</dd></div>
+        <div class="fact"><dt>Business size</dt><dd>Small business</dd></div>
+        <div class="fact"><dt>Location</dt><dd>Memphis, TN</dd></div>
+        <div class="fact"><dt>Certifications</dt><dd>AZ-104, AZ-900</dd></div>
+        <div class="fact"><dt>Experience</dt><dd>7+ years</dd></div>
+      </dl>
+      <div class="diffs">
+        <div><h3>Microsoft certified</h3><p>Azure Administrator Associate (AZ-104) and Azure Fundamentals (AZ-900).</p></div>
+        <div><h3>IT and cloud leadership</h3><p>More than seven years leading IT and cloud support.</p></div>
+        <div><h3>Healthcare IT</h3><p>Experience in high-security, regulated settings.</p></div>
+        <div><h3>Owner-led delivery</h3><p>Direct access to the principal on every engagement.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap card">
+      <div>
+        <h2>Work with Billionaire Tech</h2>
+        <p>Reach out about teaming, subcontracting, or a cloud, network, or identity project.</p>
+        <p class="who">Peggy Darnell, Owner</p>
+      </div>
+      <div class="lines">
+        <a href="tel:+19015787973">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          901-578-7973
+        </a>
+        <a href="mailto:peggyrudarnel@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          peggyrudarnel@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Billionaire Tech, Memphis, Tennessee</span>
+    <span>NAICS 541512 and 518210</span>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
