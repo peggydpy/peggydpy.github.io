@@ -109,6 +109,37 @@ section.block{padding:96px 0}
 .diffs h3{font-size:1.1rem;color:#fff;margin-bottom:4px}
 .diffs p{margin:0;color:var(--beige)}
 
+/* Products */
+.product{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.product .tag{font-family:var(--head);font-weight:700;font-size:.85rem;letter-spacing:.06em;color:var(--burgundy);text-transform:uppercase}
+.product h3{font-size:clamp(1.8rem,3vw,2.3rem);color:var(--navy);margin:8px 0 16px}
+.product p{margin:0 0 14px;max-width:52ch;color:#3A4459}
+.product .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:var(--beige)}
+.screen{background:#fff;border:2px solid var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(19,35,63,.18)}
+.screen .bar{background:var(--navy);padding:10px 14px;display:flex;align-items:center;gap:8px;color:var(--beige);font-size:.8rem}
+.screen .bar i{width:10px;height:10px;border-radius:50%;background:var(--rose);display:inline-block}
+.screen .bar i+i{background:var(--beige)}
+.screen .bar span{margin-left:8px;opacity:.85}
+.screen .body{padding:18px;display:grid;gap:12px;font-size:.95rem;color:var(--ink)}
+.screen .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;color:#3A4459}
+.screen .meta span{border:1px solid #DCCFB4;border-radius:5px;padding:1px 8px}
+.screen .title{font-family:var(--head);font-weight:700;font-size:1.15rem;color:var(--navy)}
+.screen .msg{background:var(--beige-light);border:1px solid #DCCFB4;border-radius:8px;padding:12px 14px;display:grid;gap:8px}
+.screen .msg small{color:#3A4459}
+.screen .check{font-size:.9rem;border-top:1px dashed #DCCFB4;padding-top:8px}
+.screen .bad{color:var(--burgundy);font-weight:700}
+.screen .tools{display:flex;flex-wrap:wrap;gap:6px}
+.screen .tools span{border:1.5px solid #DCCFB4;border-radius:6px;padding:5px 10px;font-family:var(--head);font-size:.8rem;font-weight:500;color:var(--navy)}
+.screen .tools span.pick{border-color:var(--burgundy);color:var(--burgundy)}
+.screen .win{background:#E3F1E8;border-radius:8px;padding:10px 14px}
+.screen .win b{font-family:var(--head);color:#1D6B3F;display:block}
+.pfacts{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:56px 0 0;border-top:1px solid #DCCFB4}
+.pfacts div{padding:22px 20px 22px 0;border-bottom:1px solid #DCCFB4}
+.pfacts dt{font-family:var(--head);font-weight:800;font-size:2rem;color:var(--navy);line-height:1.1}
+.pfacts dd{margin:4px 0 0;font-size:1rem;color:#3A4459}
+
 /* Contact */
 .contact .card{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
 .contact h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--navy);margin-bottom:14px}
@@ -133,11 +164,49 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .unit p{grid-column:2}
   .facts{grid-template-columns:1fr 1fr}
   .diffs{grid-template-columns:1fr}
+  .product{grid-template-columns:1fr;gap:32px}
+  .pfacts{grid-template-columns:1fr 1fr}
   .certs{grid-template-columns:1fr}
   .cert{grid-template-columns:1fr;justify-items:start;gap:16px}
   section.block{padding:72px 0}
   .hero{padding:120px 0 80px}
 }
+
+/* Clean white theme */
+:root{--soft:#F5F6F8;--line:#E2E5EA}
+body{background:#FFFFFF}
+.nav{background:#FFFFFF;border-bottom:3px solid var(--navy)}
+.brand{color:var(--navy)}
+.nav ul a{color:var(--navy);opacity:.9}
+.hero{background:#FFFFFF;color:var(--ink)}
+.hero::after{background:linear-gradient(90deg,#FFFFFF 0%,rgba(255,255,255,.94) 42%,rgba(255,255,255,.25) 100%)}
+.hero h1{color:var(--navy)}
+.hero p.lede{color:#3A4459}
+.code{color:var(--navy);border-color:var(--rose)}
+.code b{color:var(--burgundy)}
+.code.cert-pill{background:var(--burgundy);border-color:var(--burgundy);color:#FFFFFF}
+.code.cert-pill b{color:#FFFFFF}
+.btn{color:#FFFFFF;border-color:var(--burgundy)}
+.btn.ghost{color:var(--navy);border-color:var(--navy)}
+.btn.ghost:hover{color:#FFFFFF}
+#services{border-top:1px solid var(--line)}
+.unit{border-top-color:var(--line)}
+.pp{background:var(--soft);color:var(--ink)}
+.pp .case h3,.pp h2{color:var(--navy)!important}
+.pp p[style]{color:var(--navy)!important}
+.pp p{color:#3A4459}
+.flow span.step{background:var(--navy)!important;color:#FFFFFF!important}
+.flow span.arrow{color:var(--navy)!important}
+.pfacts,.pfacts div{border-color:var(--line)}
+.data{background:var(--soft);color:var(--ink)}
+.data .head-row h2{color:var(--navy)}
+.data .head-row p{color:#3A4459}
+.facts,.fact{border-color:var(--line)}
+.fact dt{color:var(--burgundy)}
+.fact dd{color:var(--navy)}
+.diffs div{border-left-color:var(--burgundy)}
+.diffs h3{color:var(--navy)}
+.diffs p{color:#3A4459}
 </style>
 </head>
 <body>
@@ -149,6 +218,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <li><a href="#services">Services</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#work">Past performance</a></li>
+      <li><a href="#products">Products</a></li>
       <li><a href="#company">Company data</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -160,25 +230,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <svg class="dc" viewBox="0 0 1200 620" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
     <defs>
       <g id="rack">
-        <rect width="120" height="420" rx="6" fill="#16284A" stroke="#2A3D5E" stroke-width="2"/>
-        <g fill="#1D3358" stroke="#2F4468">
+        <rect width="120" height="420" rx="6" fill="#F1F3F6" stroke="#D5DBE4" stroke-width="2"/>
+        <g fill="#E6EAF0" stroke="#CDD4DE">
           <rect x="10" y="14" width="100" height="34" rx="3"/><rect x="10" y="56" width="100" height="34" rx="3"/>
           <rect x="10" y="98" width="100" height="34" rx="3"/><rect x="10" y="140" width="100" height="34" rx="3"/>
           <rect x="10" y="182" width="100" height="34" rx="3"/><rect x="10" y="224" width="100" height="34" rx="3"/>
           <rect x="10" y="266" width="100" height="34" rx="3"/><rect x="10" y="308" width="100" height="34" rx="3"/>
           <rect x="10" y="350" width="100" height="34" rx="3"/>
         </g>
-        <g fill="#3B5075">
+        <g fill="#B8C2D0">
           <rect x="20" y="28" width="46" height="4"/><rect x="20" y="70" width="46" height="4"/><rect x="20" y="112" width="46" height="4"/>
           <rect x="20" y="154" width="46" height="4"/><rect x="20" y="196" width="46" height="4"/><rect x="20" y="238" width="46" height="4"/>
           <rect x="20" y="280" width="46" height="4"/><rect x="20" y="322" width="46" height="4"/><rect x="20" y="364" width="46" height="4"/>
         </g>
-        <g fill="#EFE4CF">
+        <g fill="#C0616F">
           <circle class="led" cx="92" cy="31" r="3"/><circle class="led d2" cx="92" cy="73" r="3"/><circle class="led d3" cx="92" cy="115" r="3"/>
           <circle class="led d2" cx="92" cy="157" r="3"/><circle class="led" cx="92" cy="199" r="3"/><circle class="led d3" cx="92" cy="241" r="3"/>
           <circle class="led" cx="92" cy="283" r="3"/><circle class="led d2" cx="92" cy="325" r="3"/><circle class="led d3" cx="92" cy="367" r="3"/>
         </g>
-        <g fill="#7FA3C9">
+        <g fill="#4A7BB0">
           <circle class="led d3" cx="102" cy="31" r="3"/><circle class="led" cx="102" cy="115" r="3"/><circle class="led d2" cx="102" cy="199" r="3"/>
           <circle class="led" cx="102" cy="283" r="3"/><circle class="led d3" cx="102" cy="367" r="3"/>
         </g>
@@ -186,7 +256,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </defs>
     <g transform="translate(0,80)">
     <!-- floor grid -->
-    <g stroke="#1B2E50" stroke-width="1">
+    <g stroke="#E2E6EC" stroke-width="1">
       <line x1="0" y1="560" x2="1200" y2="560"/><line x1="0" y1="590" x2="1200" y2="590"/>
       <line x1="560" y1="560" x2="520" y2="620"/><line x1="720" y1="560" x2="700" y2="620"/><line x1="880" y1="560" x2="880" y2="620"/><line x1="1040" y1="560" x2="1060" y2="620"/>
     </g>
@@ -196,13 +266,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <use href="#rack" x="980" y="140"/>
     <use href="#rack" x="1120" y="140"/>
     <!-- overhead cable tray and network links -->
-    <rect x="540" y="92" width="700" height="10" fill="#1D3358"/>
+    <rect x="540" y="92" width="700" height="10" fill="#E6EAF0"/>
     <g stroke="#C0616F" stroke-width="1.5" fill="none" opacity=".75">
       <path d="M620 102 V140"/><path d="M760 102 V140"/><path d="M900 102 V140"/><path d="M1040 102 V140"/><path d="M1180 102 V140"/>
       <path d="M620 60 L760 30 L900 60 L1040 30 L1180 60"/>
       <path d="M620 60 L620 92 M760 30 L760 92 M900 60 L900 92 M1040 30 L1040 92"/>
     </g>
-    <g fill="#EFE4CF">
+    <g fill="#C0616F">
       <circle cx="620" cy="60" r="5"/><circle cx="760" cy="30" r="5"/><circle cx="900" cy="60" r="5"/><circle cx="1040" cy="30" r="5"/><circle cx="1180" cy="60" r="5"/>
     </g>
     </g>
@@ -316,6 +386,49 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <span class="step">Azure Static Web Apps</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="block" id="products">
+    <div class="wrap">
+      <div class="head-row">
+        <h2>Products</h2>
+        <p>Training tools built from seven years of IT support and identity management in enterprise and healthcare environments.</p>
+      </div>
+      <div class="product">
+        <div>
+          <p class="tag">IT training game &middot; Free beta</p>
+          <h3>Helpdesk to Billions</h3>
+          <p>A browser game where players learn real help desk and identity work. They verify callers against the directory, reset passwords and MFA, unlock accounts, provision new hires, and spot phishing and impersonation.</p>
+          <p>As they improve, players climb from intern to CTO, found their own company, and run a global datacenter business through live outages, security incidents, and their own operating system launch.</p>
+          <div class="actions">
+            <a class="btn" href="https://peggydpy.github.io/helpdesk-to-billions/">Play the free beta</a>
+            <a class="btn ghost" href="#contact">Ask about team training</a>
+          </div>
+        </div>
+        <figure class="screen" style="margin:0">
+          <div class="bar" aria-hidden="true"><i></i><i></i><span>Helpdesk to Billions</span></div>
+          <div class="body">
+            <div class="meta"><span>INC-10442</span><span>Phone</span><span>MFA problem</span></div>
+            <div class="title">Turn off my MFA</div>
+            <div class="msg">
+              <small>Caller says: Marcus Okafor, VP of Finance</small>
+              <span>&ldquo;My phone was stolen at the airport. Just switch off MFA for a few days. My manager already approved it.&rdquo;</span>
+              <span class="check">Caller gives employee ID <b>E-48231</b> &middot; Directory says <span class="bad">E-48213</span></span>
+            </div>
+            <div class="tools" aria-hidden="true"><span>Reset MFA</span><span>Reset password</span><span class="pick">Escalate to Security</span></div>
+            <div class="win"><b>Clean resolution</b>You blocked an MFA-bypass attempt. That is exactly how big breaches start.</div>
+          </div>
+          <figcaption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Game screen: a caller asks to disable MFA, the employee ID does not match the directory, and the player escalates to Security.</figcaption>
+        </figure>
+      </div>
+      <dl class="pfacts">
+        <div><dt>16</dt><dd>ticket types, from resets to offboarding</dd></div>
+        <div><dt>7</dt><dd>career ranks, intern to billionaire</dd></div>
+        <div><dt>12</dt><dd>datacenter regions to build</dd></div>
+        <div><dt>7</dt><dd>incident drills, from DDoS to ransomware</dd></div>
+        <div><dt>21</dt><dd>achievements and a daily streak</dd></div>
+      </dl>
     </div>
   </section>
 
