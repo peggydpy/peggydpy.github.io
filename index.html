@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Billionaire Tech | Cloud, Network & Identity Services | Memphis, TN</title>
-<meta name="description" content="Billionaire Tech is a Memphis, TN small business providing cloud infrastructure, network operations, and identity and access management. NAICS 541512 and 518210.">
+<title>Billionaire Tech | Remote Cloud, Network & Identity Services | Memphis, TN</title>
+<meta name="description" content="Billionaire Tech is a remote-only Memphis, TN small business providing cloud infrastructure, network operations, and identity and access management, available for remote contracts and roles nationwide. NAICS 541512 and 518210.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2313233F'/><rect x='8' y='7' width='16' height='5' rx='1' fill='%23EFE4CF'/><rect x='8' y='14' width='16' height='5' rx='1' fill='%23EFE4CF'/><rect x='8' y='21' width='16' height='5' rx='1' fill='%23EFE4CF'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,6 +237,11 @@ body{background:#FFFFFF}
 .hd-card button[type=submit]{cursor:pointer}
 .hd-card button[disabled]{opacity:.6;cursor:wait}
 .hd-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.hd-remote{background:#EEF4EF;border:1.5px solid #2F7D4F;border-radius:8px;padding:12px 14px;color:#1F4D33!important}
+.hd-card label>span.hd-hint{font-family:var(--body);font-weight:400;font-size:.88rem;color:#3A4459;margin:6px 0 0}
+.hd-card label>span.hd-hint[hidden]{display:none}
+.code.remote{background:#EEF4EF;border-color:#2F7D4F;color:#1F4D33}
+.code.remote .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2F7D4F;margin-right:8px;vertical-align:middle}
 .hd-done{text-align:left}
 .hd-done .tag{font-family:var(--head);font-weight:700;font-size:.85rem;letter-spacing:.06em;color:var(--burgundy);text-transform:uppercase}
 .hd-done h3{font-size:1.5rem;color:var(--navy);margin:6px 0 10px}
@@ -324,6 +329,7 @@ body{background:#FFFFFF}
       <span class="code">NAICS <b>541512</b></span>
       <span class="code">NAICS <b>518210</b></span>
       <span class="code">Small business, Memphis TN</span>
+      <span class="code remote"><span class="dot" aria-hidden="true"></span>Remote only, nationwide</span>
       <a class="code cert-pill" href="#certifications" style="text-decoration:none">Microsoft Certified: <b>AZ-104</b></a>
     </div>
     <a class="btn" href="#contact">Contact Peggy Darnell</a>
@@ -499,6 +505,7 @@ body{background:#FFFFFF}
       <div class="hd-side">
         <h2>Help desk</h2>
         <p>Open a ticket for collaborations, teaming and subcontracting, contracts, or part-time and full-time roles. It goes straight to Peggy's inbox.</p>
+        <p class="hd-remote"><b>Remote only.</b> All collaborations, contracts, and roles are performed fully remote, for clients nationwide.</p>
         <ol class="hd-steps">
           <li><b>1</b><span>Pick the type of request and share the details.</span></li>
           <li><b>2</b><span>You get a ticket number on the spot.</span></li>
@@ -524,10 +531,10 @@ body{background:#FFFFFF}
             <label><span>Organization or agency</span><input type="text" id="hd-org" name="organization" autocomplete="organization"></label>
             <label><span>Phone</span><input type="tel" id="hd-phone" name="phone" autocomplete="tel"></label>
             <label><span>Timeline</span><select id="hd-timeline" name="timeline"><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select></label>
-            <label><span>Budget, rate, or salary range</span><input type="text" id="hd-budget" name="budget" placeholder="$85/hr, $40K, or TBD"></label>
+            <label><span>Budget, rate, or salary range</span><input type="text" id="hd-budget" name="budget" placeholder="$85/hr, $120K, or TBD"></label>
           </div>
           <label style="margin-bottom:16px"><span>Link to the posting, RFP, or SAM.gov notice</span><input type="url" id="hd-link" name="link" placeholder="https://"><span class="hd-err" id="err-link"></span></label>
-          <label><span>Details <span class="req">*</span></span><textarea id="hd-msg" name="message" required placeholder="Scope, location or remote, clearance needs, start date, and anything else that helps."></textarea><span class="hd-err" id="err-msg"></span></label>
+          <label><span>Details <span class="req">*</span></span><textarea id="hd-msg" name="message" required placeholder="Scope, clearance needs, start date, and anything else that helps. All work is remote."></textarea><span class="hd-err" id="err-msg"></span></label>
           <div class="hd-hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
           <div class="hd-foot">
             <p>Your details go only to Billionaire Tech and are used only to reply to you.</p>
@@ -590,6 +597,7 @@ body{background:#FFFFFF}
     need(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'email', email ? 'Check the email address, for example name@agency.gov.' : 'Enter your email so Peggy can reply.', $('hd-email'));
     need(!link || /^https?:\/\/\S+\.\S+/.test(link), 'link', 'Links start with https://', $('hd-link'));
     need(msg.length >= 10, 'msg', 'Add a few details about the request.', $('hd-msg'));
+    var arr = 'Remote';
     if (!ok){ first.focus(); return; }
     if (form._honey.value) return;
     var d = new Date(), ticket = 'BT-' + String(d.getFullYear()).slice(2) + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
@@ -598,6 +606,7 @@ body{background:#FFFFFF}
       from_name: 'Billionaire Tech Help Desk', replyto: email, botcheck: '',
       Ticket: ticket, 'Request type': type, Name: name, Email: email,
       Organization: $('hd-org').value.trim() || '-', Phone: $('hd-phone').value.trim() || '-',
+      'Work arrangement': 'Remote',
       Timeline: $('hd-timeline').value, 'Budget or rate': $('hd-budget').value.trim() || '-', Link: link || '-', Details: msg
     };
     var btn = $('hdSubmit'); btn.disabled = true; btn.textContent = 'Submitting…'; $('hdAlert').innerHTML = '';
@@ -605,12 +614,12 @@ body{background:#FFFFFF}
       .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
       .then(function(res){
         if (!res.ok || !res.j.success) throw new Error(res.j.message || 'Submission failed');
-        $('hdCard').innerHTML = '<div class="hd-done" role="status"><p class="tag">Ticket submitted</p><h3>Thanks, ' + esc(name.split(' ')[0]) + '. Your ticket is ' + ticket + '.</h3><p>Peggy will reply to ' + esc(email) + ', usually within two business days. Keep the ticket number for your records.</p><dl><dt>Type</dt><dd>' + esc(type) + '</dd><dt>Timeline</dt><dd>' + esc(data.Timeline) + '</dd><dt>Organization</dt><dd>' + esc(data.Organization) + '</dd></dl></div>';
+        $('hdCard').innerHTML = '<div class="hd-done" role="status"><p class="tag">Ticket submitted</p><h3>Thanks, ' + esc(name.split(' ')[0]) + '. Your ticket is ' + ticket + '.</h3><p>Peggy will reply to ' + esc(email) + ', usually within two business days. Keep the ticket number for your records.</p><dl><dt>Type</dt><dd>' + esc(type) + '</dd><dt>Arrangement</dt><dd>' + esc(arr) + '</dd><dt>Timeline</dt><dd>' + esc(data.Timeline) + '</dd><dt>Organization</dt><dd>' + esc(data.Organization) + '</dd></dl></div>';
         $('hdCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
       .catch(function(){
         btn.disabled = false; btn.textContent = 'Submit ticket';
-        var body = encodeURIComponent('Ticket ' + ticket + '\nType: ' + type + '\nName: ' + name + '\nOrganization: ' + data.Organization + '\nTimeline: ' + data.Timeline + '\nBudget or rate: ' + data['Budget or rate'] + '\nLink: ' + data.Link + '\n\n' + msg);
+        var body = encodeURIComponent('Ticket ' + ticket + '\nType: ' + type + '\nName: ' + name + '\nOrganization: ' + data.Organization + '\nArrangement: Remote\nTimeline: ' + data.Timeline + '\nBudget or rate: ' + data['Budget or rate'] + '\nLink: ' + data.Link + '\n\n' + msg);
         $('hdAlert').innerHTML = '<div class="hd-alert">The ticket could not be sent right now. Email it instead to <a href="mailto:' + TO + '?subject=' + encodeURIComponent('Help desk ticket ' + ticket + ': ' + type) + '&body=' + body + '">' + TO + '</a>, or call 901-578-7973.</div>';
       });
   });
