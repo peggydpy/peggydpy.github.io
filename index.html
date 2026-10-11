@@ -573,7 +573,7 @@ body{background:#FFFFFF}
 <script>
 (function(){
   var form = document.getElementById('hdForm'); if (!form) return;
-  var TO = 'peggyrudarnel@gmail.com';
+  var TO = 'peggyrudarnel@gmail.com', KEY = '81f0040c-a423-46fe-9b41-31a8794f859c';
   var $ = function(id){ return document.getElementById(id); };
   var err = function(k, m){ var e = $('err-' + k); if (e) e.textContent = m || ''; };
   var esc = function(t){ return String(t).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
@@ -594,17 +594,17 @@ body{background:#FFFFFF}
     if (form._honey.value) return;
     var d = new Date(), ticket = 'BT-' + String(d.getFullYear()).slice(2) + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
     var data = {
-      _subject: 'Help desk ticket ' + ticket + ': ' + type + ' from ' + name,
-      _template: 'table', _captcha: 'false', _replyto: email,
+      access_key: KEY, subject: 'Help desk ticket ' + ticket + ': ' + type + ' from ' + name,
+      from_name: 'Billionaire Tech Help Desk', replyto: email, botcheck: '',
       Ticket: ticket, 'Request type': type, Name: name, Email: email,
       Organization: $('hd-org').value.trim() || '-', Phone: $('hd-phone').value.trim() || '-',
       Timeline: $('hd-timeline').value, 'Budget or rate': $('hd-budget').value.trim() || '-', Link: link || '-', Details: msg
     };
     var btn = $('hdSubmit'); btn.disabled = true; btn.textContent = 'Submitting…'; $('hdAlert').innerHTML = '';
-    fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
       .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
       .then(function(res){
-        if (!res.ok || String(res.j.success) !== 'true') throw new Error(res.j.message || 'Submission failed');
+        if (!res.ok || !res.j.success) throw new Error(res.j.message || 'Submission failed');
         $('hdCard').innerHTML = '<div class="hd-done" role="status"><p class="tag">Ticket submitted</p><h3>Thanks, ' + esc(name.split(' ')[0]) + '. Your ticket is ' + ticket + '.</h3><p>Peggy will reply to ' + esc(email) + ', usually within two business days. Keep the ticket number for your records.</p><dl><dt>Type</dt><dd>' + esc(type) + '</dd><dt>Timeline</dt><dd>' + esc(data.Timeline) + '</dd><dt>Organization</dt><dd>' + esc(data.Organization) + '</dd></dl></div>';
         $('hdCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
