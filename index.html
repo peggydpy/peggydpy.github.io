@@ -208,7 +208,10 @@ body{background:#FFFFFF}
 .diffs h3{color:var(--navy)}
 .diffs p{color:#3A4459}
 /* Help desk */
-#helpdesk{border-top:1px solid var(--line)}
+#contact{padding-bottom:40px}
+#helpdesk{padding-top:40px}
+.hd-file input[type=file]{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:#fff;border:1.5px dashed #C9CFDB;border-radius:6px;padding:12px;cursor:pointer}
+.hd-file input[type=file]:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(19,35,63,.12)}
 .hd{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
 .hd-side h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--navy);margin-bottom:14px}
 .hd-side p{margin:0 0 14px;max-width:40ch;color:#3A4459}
@@ -249,7 +252,7 @@ body{background:#FFFFFF}
 .hd-done dt{font-weight:600;color:var(--navy)}
 .hd-done dd{margin:0;color:#3A4459;word-break:break-word}
 .hd-alert{background:#FBEAEC;border:1.5px solid var(--rose);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:.95rem;color:var(--burgundy-deep)}
-@media (max-width:860px){.hd{grid-template-columns:1fr;gap:24px}.hd-grid{grid-template-columns:1fr}.hd-card{padding:20px}}
+@media (max-width:860px){.hd{grid-template-columns:1fr;gap:24px}.hd-grid{grid-template-columns:1fr}.hd-card{padding:20px}#contact{padding-bottom:32px}#helpdesk{padding-top:32px}}
 </style>
 </head>
 <body>
@@ -263,8 +266,8 @@ body{background:#FFFFFF}
       <li><a href="#work">Past performance</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#company">Company data</a></li>
-      <li><a href="#helpdesk">Help desk</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#helpdesk">Help desk</a></li>
     </ul>
   </div>
 </nav>
@@ -325,14 +328,12 @@ body{background:#FFFFFF}
   <div class="wrap">
     <h1>Billionaire Tech</h1>
     <p class="lede">Cloud infrastructure, network operations, and secure identity services for federal and commercial clients.</p>
-    <div class="codes" aria-label="NAICS codes">
-      <span class="code">NAICS <b>541512</b></span>
-      <span class="code">NAICS <b>518210</b></span>
+    <div class="codes" aria-label="Company highlights">
       <span class="code">Small business, Memphis TN</span>
       <span class="code remote"><span class="dot" aria-hidden="true"></span>Remote only, nationwide</span>
       <a class="code cert-pill" href="#certifications" style="text-decoration:none">Microsoft Certified: <b>AZ-104</b></a>
     </div>
-    <a class="btn" href="#contact">Contact Peggy Darnell</a>
+    <a class="btn" href="#helpdesk" id="resumeBtn">Submit your resume free</a>
   </div>
 </header>
 
@@ -500,52 +501,6 @@ body{background:#FFFFFF}
     </div>
   </section>
 
-  <section class="block" id="helpdesk">
-    <div class="wrap hd">
-      <div class="hd-side">
-        <h2>Help desk</h2>
-        <p>Open a ticket for collaborations, teaming and subcontracting, contracts, or part-time and full-time roles. It goes straight to Peggy's inbox.</p>
-        <p class="hd-remote"><b>Remote only.</b> All collaborations, contracts, and roles are performed fully remote, for clients nationwide.</p>
-        <ol class="hd-steps">
-          <li><b>1</b><span>Pick the type of request and share the details.</span></li>
-          <li><b>2</b><span>You get a ticket number on the spot.</span></li>
-          <li><b>3</b><span>Peggy replies by email, usually within two business days.</span></li>
-        </ol>
-      </div>
-      <div class="hd-card" id="hdCard">
-        <form id="hdForm" novalidate>
-          <fieldset>
-            <legend>Type of request <span class="req">*</span></legend>
-            <div class="hd-types" role="radiogroup">
-              <label><input type="radio" name="type" value="Collaboration or teaming" required><span class="pill">Collaboration or teaming</span></label>
-              <label><input type="radio" name="type" value="Contract or subcontract"><span class="pill">Contract or subcontract</span></label>
-              <label><input type="radio" name="type" value="Full-time role"><span class="pill">Full-time role</span></label>
-              <label><input type="radio" name="type" value="Part-time role"><span class="pill">Part-time role</span></label>
-              <label><input type="radio" name="type" value="Other"><span class="pill">Other</span></label>
-            </div>
-            <span class="hd-err" id="err-type"></span>
-          </fieldset>
-          <div class="hd-grid">
-            <label><span>Your name <span class="req">*</span></span><input type="text" id="hd-name" name="name" autocomplete="name" required><span class="hd-err" id="err-name"></span></label>
-            <label><span>Email <span class="req">*</span></span><input type="email" id="hd-email" name="email" autocomplete="email" required><span class="hd-err" id="err-email"></span></label>
-            <label><span>Organization or agency</span><input type="text" id="hd-org" name="organization" autocomplete="organization"></label>
-            <label><span>Phone</span><input type="tel" id="hd-phone" name="phone" autocomplete="tel"></label>
-            <label><span>Timeline</span><select id="hd-timeline" name="timeline"><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select></label>
-            <label><span>Budget, rate, or salary range</span><input type="text" id="hd-budget" name="budget" placeholder="$85/hr, $120K, or TBD"></label>
-          </div>
-          <label style="margin-bottom:16px"><span>Link to the posting, RFP, or SAM.gov notice</span><input type="url" id="hd-link" name="link" placeholder="https://"><span class="hd-err" id="err-link"></span></label>
-          <label><span>Details <span class="req">*</span></span><textarea id="hd-msg" name="message" required placeholder="Scope, clearance needs, start date, and anything else that helps. All work is remote."></textarea><span class="hd-err" id="err-msg"></span></label>
-          <div class="hd-hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
-          <div class="hd-foot">
-            <p>Your details go only to Billionaire Tech and are used only to reply to you.</p>
-            <button class="btn" type="submit" id="hdSubmit">Submit ticket</button>
-          </div>
-          <div id="hdAlert" role="alert"></div>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <section class="block contact" id="contact">
     <div class="wrap card">
       <div>
@@ -568,6 +523,55 @@ body{background:#FFFFFF}
       </div>
     </div>
   </section>
+
+  <section class="block" id="helpdesk">
+    <div class="wrap hd">
+      <div class="hd-side">
+        <h2>Help desk</h2>
+        <p>Open a ticket for collaborations, teaming and subcontracting, contracts, or part-time and full-time roles, or submit your resume for free. It goes straight to Peggy's inbox.</p>
+        <p class="hd-remote"><b>Remote only.</b> All collaborations, contracts, and roles are performed fully remote, for clients nationwide.</p>
+        <ol class="hd-steps">
+          <li><b>1</b><span>Pick the type of request and share the details.</span></li>
+          <li><b>2</b><span>You get a ticket number on the spot.</span></li>
+          <li><b>3</b><span>Peggy replies by email, usually within two business days.</span></li>
+        </ol>
+      </div>
+      <div class="hd-card" id="hdCard">
+        <form id="hdForm" novalidate>
+          <fieldset>
+            <legend>Type of request <span class="req">*</span></legend>
+            <div class="hd-types" role="radiogroup">
+              <label><input type="radio" name="type" value="Collaboration or teaming" required><span class="pill">Collaboration or teaming</span></label>
+              <label><input type="radio" name="type" value="Contract or subcontract"><span class="pill">Contract or subcontract</span></label>
+              <label><input type="radio" name="type" value="Full-time role"><span class="pill">Full-time role</span></label>
+              <label><input type="radio" name="type" value="Part-time role"><span class="pill">Part-time role</span></label>
+              <label><input type="radio" name="type" value="Resume submission"><span class="pill">Resume submission</span></label>
+              <label><input type="radio" name="type" value="Other"><span class="pill">Other</span></label>
+            </div>
+            <span class="hd-err" id="err-type"></span>
+          </fieldset>
+          <div class="hd-grid">
+            <label><span>Your name <span class="req">*</span></span><input type="text" id="hd-name" name="name" autocomplete="name" required><span class="hd-err" id="err-name"></span></label>
+            <label><span>Email <span class="req">*</span></span><input type="email" id="hd-email" name="email" autocomplete="email" required><span class="hd-err" id="err-email"></span></label>
+            <label><span>Organization or agency</span><input type="text" id="hd-org" name="organization" autocomplete="organization"></label>
+            <label><span>Phone</span><input type="tel" id="hd-phone" name="phone" autocomplete="tel"></label>
+            <label><span>Timeline</span><select id="hd-timeline" name="timeline"><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select></label>
+            <label><span>Budget, rate, or salary range</span><input type="text" id="hd-budget" name="budget" placeholder="$85/hr, $120K, or TBD"></label>
+          </div>
+          <label style="margin-bottom:16px"><span>Link to the posting, RFP, or SAM.gov notice</span><input type="url" id="hd-link" name="link" placeholder="https://"><span class="hd-err" id="err-link"></span></label>
+          <label class="hd-file" style="margin-bottom:16px"><span>Resume, free to submit <span class="req" id="resumeReq" hidden>*</span></span><input type="file" id="hd-resume" name="attachment" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"><span class="hd-hint">Word (.doc, .docx) or PDF only, up to 5 MB.</span><span class="hd-err" id="err-resume"></span></label>
+          <label><span>Details <span class="req">*</span></span><textarea id="hd-msg" name="message" required placeholder="Scope, clearance needs, start date, and anything else that helps. All work is remote."></textarea><span class="hd-err" id="err-msg"></span></label>
+          <div class="hd-hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+          <div class="hd-foot">
+            <p>Your details go only to Billionaire Tech and are used only to reply to you.</p>
+            <button class="btn" type="submit" id="hdSubmit">Submit ticket</button>
+          </div>
+          <div id="hdAlert" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -585,7 +589,11 @@ body{background:#FFFFFF}
   var err = function(k, m){ var e = $('err-' + k); if (e) e.textContent = m || ''; };
   var esc = function(t){ return String(t).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
   form.addEventListener('input', function(e){ var id = (e.target.id || '').replace('hd-', ''); err(id === 'msg' ? 'msg' : id); if (e.target.name === 'type') err('type'); });
-  form.addEventListener('change', function(e){ if (e.target.name === 'type') err('type'); });
+  var RESUME = 'Resume submission', MAX = 5 * 1024 * 1024, OK_EXT = /\.(pdf|docx?)$/i;
+  var syncResume = function(){ var t = form.querySelector('input[name=type]:checked'); $('resumeReq').hidden = !(t && t.value === RESUME); };
+  form.addEventListener('change', function(e){ if (e.target.name === 'type'){ err('type'); syncResume(); } });
+  var rb = $('resumeBtn');
+  if (rb) rb.addEventListener('click', function(){ var r = form.querySelector('input[name=type][value="' + RESUME + '"]'); if (r){ r.checked = true; err('type'); syncResume(); } });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var type = (form.querySelector('input[name=type]:checked') || {}).value || '';
@@ -596,6 +604,11 @@ body{background:#FFFFFF}
     need(name, 'name', 'Enter your name.', $('hd-name'));
     need(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'email', email ? 'Check the email address, for example name@agency.gov.' : 'Enter your email so Peggy can reply.', $('hd-email'));
     need(!link || /^https?:\/\/\S+\.\S+/.test(link), 'link', 'Links start with https://', $('hd-link'));
+    var file = $('hd-resume').files[0];
+    var fileMsg = !file ? (type === RESUME ? 'Attach your resume as a Word or PDF file.' : '')
+      : !OK_EXT.test(file.name) ? 'Only Word (.doc, .docx) or PDF files can be attached.'
+      : file.size > MAX ? 'The file is over 5 MB. Attach a smaller copy.' : '';
+    need(!fileMsg, 'resume', fileMsg, $('hd-resume'));
     need(msg.length >= 10, 'msg', 'Add a few details about the request.', $('hd-msg'));
     var arr = 'Remote';
     if (!ok){ first.focus(); return; }
@@ -610,17 +623,29 @@ body{background:#FFFFFF}
       Timeline: $('hd-timeline').value, 'Budget or rate': $('hd-budget').value.trim() || '-', Link: link || '-', Details: msg
     };
     var btn = $('hdSubmit'); btn.disabled = true; btn.textContent = 'Submitting…'; $('hdAlert').innerHTML = '';
-    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
-      .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+    var send;
+    if (file){
+      // Web3Forms' free plan has no attachments, so tickets with a resume go through FormSubmit (free, 10 MB limit).
+      var fd = new FormData();
+      Object.keys(data).forEach(function(k){ if (k !== 'access_key' && k !== 'botcheck' && k !== 'subject' && k !== 'from_name' && k !== 'replyto') fd.append(k, data[k]); });
+      fd.append('_subject', data.subject); fd.append('_replyto', email); fd.append('_template', 'table'); fd.append('_captcha', 'false');
+      fd.append('attachment', file, file.name);
+      send = fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd })
+        .then(function(r){ return r.json().then(function(j){ return { ok: r.ok && String(j.success) === 'true', j: j }; }); });
+    } else {
+      send = fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+        .then(function(r){ return r.json().then(function(j){ return { ok: r.ok && j.success, j: j }; }); });
+    }
+    send
       .then(function(res){
-        if (!res.ok || !res.j.success) throw new Error(res.j.message || 'Submission failed');
-        $('hdCard').innerHTML = '<div class="hd-done" role="status"><p class="tag">Ticket submitted</p><h3>Thanks, ' + esc(name.split(' ')[0]) + '. Your ticket is ' + ticket + '.</h3><p>Peggy will reply to ' + esc(email) + ', usually within two business days. Keep the ticket number for your records.</p><dl><dt>Type</dt><dd>' + esc(type) + '</dd><dt>Arrangement</dt><dd>' + esc(arr) + '</dd><dt>Timeline</dt><dd>' + esc(data.Timeline) + '</dd><dt>Organization</dt><dd>' + esc(data.Organization) + '</dd></dl></div>';
+        if (!res.ok) throw new Error(res.j.message || 'Submission failed');
+        $('hdCard').innerHTML = '<div class="hd-done" role="status"><p class="tag">Ticket submitted</p><h3>Thanks, ' + esc(name.split(' ')[0]) + '. Your ticket is ' + ticket + '.</h3><p>Peggy will reply to ' + esc(email) + ', usually within two business days. Keep the ticket number for your records.</p><dl><dt>Type</dt><dd>' + esc(type) + '</dd><dt>Arrangement</dt><dd>' + esc(arr) + '</dd><dt>Timeline</dt><dd>' + esc(data.Timeline) + '</dd><dt>Organization</dt><dd>' + esc(data.Organization) + '</dd>' + (file ? '<dt>Resume</dt><dd>' + esc(file.name) + '</dd>' : '') + '</dl></div>';
         $('hdCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
       .catch(function(){
         btn.disabled = false; btn.textContent = 'Submit ticket';
         var body = encodeURIComponent('Ticket ' + ticket + '\nType: ' + type + '\nName: ' + name + '\nOrganization: ' + data.Organization + '\nArrangement: Remote\nTimeline: ' + data.Timeline + '\nBudget or rate: ' + data['Budget or rate'] + '\nLink: ' + data.Link + '\n\n' + msg);
-        $('hdAlert').innerHTML = '<div class="hd-alert">The ticket could not be sent right now. Email it instead to <a href="mailto:' + TO + '?subject=' + encodeURIComponent('Help desk ticket ' + ticket + ': ' + type) + '&body=' + body + '">' + TO + '</a>, or call 901-578-7973.</div>';
+        $('hdAlert').innerHTML = '<div class="hd-alert">The ticket could not be sent right now. Email it instead to <a href="mailto:' + TO + '?subject=' + encodeURIComponent('Help desk ticket ' + ticket + ': ' + type) + '&body=' + body + '">' + TO + '</a>' + (file ? ' and attach your resume' : '') + ', or call 901-578-7973.</div>';
       });
   });
 })();
