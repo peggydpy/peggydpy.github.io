@@ -154,10 +154,14 @@ section.block{padding:96px 0}
 .screen .win b{font-family:var(--head);color:#1D6B3F;display:block}
 .screen .win .gain{display:flex;gap:6px;margin-top:4px}
 .screen .win .gain span{font-size:.72rem;font-weight:700;color:#1D6B3F;background:#fff;border-radius:999px;padding:1px 8px}
-.product .slogan{font-family:var(--head);font-weight:700;font-size:1.05rem;color:var(--navy);margin:-4px 0 14px;padding-left:12px;border-left:4px solid var(--burgundy);line-height:1.5}
+.product .slogan{font-family:var(--head);font-weight:700;font-size:clamp(.62rem,1.24vw,.92rem);letter-spacing:-.015em;white-space:nowrap;color:var(--navy);margin:-4px 0 16px;padding:2px 0 2px 12px;border-left:4px solid var(--burgundy);line-height:1.4;-webkit-font-smoothing:antialiased}
 .product .slogan span{color:var(--burgundy)}
+.product .slogan i{font-style:normal;color:var(--rose);margin:0 .45em}
+@media (max-width:860px){.product .slogan{font-size:2.45vw}}
 .product .screen{position:relative;box-shadow:0 22px 50px rgba(19,35,63,.22),0 0 0 6px rgba(122,31,46,.06),-30px 30px 80px -20px rgba(122,31,46,.28),30px -20px 80px -20px rgba(95,185,138,.22)}
 .screen .bar{background:linear-gradient(90deg,var(--navy),#22396A)}
+.screen .bar span{white-space:nowrap}
+@media (max-width:480px){.screen .bar .live{display:none}}
 .screen .tools span.pick{animation:qpick 2.4s ease-in-out infinite}
 @keyframes qpick{0%,100%{box-shadow:0 4px 10px rgba(122,31,46,.25),0 0 0 0 rgba(122,31,46,.35)}50%{box-shadow:0 4px 10px rgba(122,31,46,.25),0 0 0 6px rgba(122,31,46,0)}}
 @media (prefers-reduced-motion:reduce){.screen .bar .live::before,.screen .tools span.pick{animation:none}}
@@ -470,7 +474,7 @@ body{background:#FFFFFF}
         <div>
           <p class="tag">IT training game &middot; Free beta</p>
           <h3>Helpdesk to Billions</h3>
-          <p class="slogan">Helpdesk Tech to Billions. <span>Billions of people.</span> <span>Billions of dollars.</span></p>
+          <p class="slogan">Helpdesk Tech to Billions<i>&bull;</i><span>Billions of people</span><i>&bull;</i><span>Billions of dollars</span></p>
           <p>A browser game where players learn real help desk and identity work. They verify callers against the directory, reset passwords and MFA, unlock accounts, provision new hires, and spot phishing and impersonation.</p>
           <p>As they improve, players climb from intern to CTO, found their own company, and run a global datacenter business through live outages, security incidents, and their own operating system launch.</p>
           <div class="actions">
