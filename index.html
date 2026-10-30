@@ -154,10 +154,9 @@ section.block{padding:96px 0}
 .screen .win b{font-family:var(--head);color:#1D6B3F;display:block}
 .screen .win .gain{display:flex;gap:6px;margin-top:4px}
 .screen .win .gain span{font-size:.72rem;font-weight:700;color:#1D6B3F;background:#fff;border-radius:999px;padding:1px 8px}
-.product .slogan{font-family:var(--head);font-weight:700;font-size:clamp(.62rem,1.24vw,.92rem);letter-spacing:-.015em;white-space:nowrap;color:var(--navy);margin:-4px 0 16px;padding:2px 0 2px 12px;border-left:4px solid var(--burgundy);line-height:1.4;-webkit-font-smoothing:antialiased}
-.product .slogan span{color:var(--burgundy)}
-.product .slogan i{font-style:normal;color:var(--rose);margin:0 .45em}
-@media (max-width:860px){.product .slogan{font-size:2.45vw}}
+.hd-side .slogan{margin:auto 0 0;padding:6px 0 6px 18px;border-left:5px solid var(--burgundy);max-width:none;font-family:var(--head);font-weight:800;font-size:clamp(1.1rem,2.1vw,1.5rem);line-height:1.25;letter-spacing:-.02em;white-space:nowrap;color:var(--navy);-webkit-font-smoothing:antialiased}
+.hd-side .slogan span{display:block;color:var(--burgundy)}
+@media (max-width:860px){.hd-side .slogan{margin-top:28px}}
 .product .screen{position:relative;box-shadow:0 22px 50px rgba(19,35,63,.22),0 0 0 6px rgba(122,31,46,.06),-30px 30px 80px -20px rgba(122,31,46,.28),30px -20px 80px -20px rgba(95,185,138,.22)}
 .screen .bar{background:linear-gradient(90deg,var(--navy),#22396A)}
 .screen .bar span{white-space:nowrap}
@@ -242,7 +241,8 @@ body{background:#FFFFFF}
 #contact{padding-top:40px}
 .hd-file input[type=file]{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:#fff;border:1.5px dashed #C9CFDB;border-radius:6px;padding:12px;cursor:pointer}
 .hd-file input[type=file]:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(19,35,63,.12)}
-.hd{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
+.hd{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:stretch}
+.hd-side{display:flex;flex-direction:column}
 .hd-side h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--navy);margin-bottom:14px}
 .hd-side p{margin:0 0 14px;max-width:40ch;color:#3A4459}
 .hd-steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
@@ -474,7 +474,6 @@ body{background:#FFFFFF}
         <div>
           <p class="tag">IT training game &middot; Free beta</p>
           <h3>Helpdesk to Billions</h3>
-          <p class="slogan">Helpdesk Tech to Billions<i>&bull;</i><span>Billions of people</span><i>&bull;</i><span>Billions of dollars</span></p>
           <p>A browser game where players learn real help desk and identity work. They verify callers against the directory, reset passwords and MFA, unlock accounts, provision new hires, and spot phishing and impersonation.</p>
           <p>As they improve, players climb from intern to CTO, found their own company, and run a global datacenter business through live outages, security incidents, and their own operating system launch.</p>
           <div class="actions">
@@ -541,6 +540,7 @@ body{background:#FFFFFF}
           <li><b>2</b><span>You get a ticket number on the spot.</span></li>
           <li><b>3</b><span>Peggy replies by email, usually within two business days.</span></li>
         </ol>
+        <p class="slogan">Helpdesk Tech to Billions.<span>Billions of people.</span><span>Billions of dollars.</span></p>
       </div>
       <div class="hd-card" id="hdCard">
         <form id="hdForm" novalidate>
