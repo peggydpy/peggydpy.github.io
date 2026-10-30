@@ -119,22 +119,48 @@ section.block{padding:96px 0}
 .btn.ghost:hover{background:var(--navy);color:var(--beige)}
 .screen{background:#fff;border:2px solid var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(19,35,63,.18)}
 .screen .bar{background:var(--navy);padding:10px 14px;display:flex;align-items:center;gap:8px;color:var(--beige);font-size:.8rem}
-.screen .bar i{width:10px;height:10px;border-radius:50%;background:var(--rose);display:inline-block}
-.screen .bar i+i{background:var(--beige)}
+.screen .bar i{width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.75) 0 18%,transparent 30%),var(--rose);box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 8px rgba(192,97,111,.55);display:inline-block}
+.screen .bar i+i{background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.85) 0 18%,transparent 30%),#E8C77A;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 8px rgba(232,199,122,.5)}
+.screen .bar i:nth-child(3){background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.8) 0 18%,transparent 30%),#5FB98A;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 8px rgba(95,185,138,.5)}
 .screen .bar span{margin-left:8px;opacity:.85}
-.screen .body{padding:18px;display:grid;gap:12px;font-size:.95rem;color:var(--ink)}
-.screen .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;color:#3A4459}
-.screen .meta span{border:1px solid #DCCFB4;border-radius:5px;padding:1px 8px}
+.screen .bar .live{margin-left:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border-radius:999px;padding:2px 10px;font-size:.72rem;letter-spacing:.04em;opacity:1}
+.screen .bar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:#5FB98A;animation:qpulse 1.8s ease-in-out infinite}
+@keyframes qpulse{0%,100%{opacity:1}50%{opacity:.3}}
+.screen .queue{display:flex;gap:6px;padding:10px 18px 0;overflow:hidden}
+.screen .queue span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.74rem;color:#5A6275;background:#F5F6F8;border-radius:6px;padding:5px 8px;border-left:3px solid #C9CED8}
+.screen .queue span.on{background:var(--beige-light);color:var(--navy);font-weight:600;border-left-color:var(--burgundy)}
+.screen .body{padding:16px 18px 18px;display:grid;gap:12px;font-size:.95rem;color:var(--ink)}
+.screen .meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.78rem;color:#3A4459}
+.screen .meta span{border:1px solid #DCCFB4;border-radius:999px;padding:2px 10px;background:#fff}
+.screen .meta .id{font-family:Consolas,"Courier New",monospace;font-weight:700;color:var(--navy)}
+.screen .meta .p1{background:var(--burgundy);border-color:var(--burgundy);color:#fff;font-weight:600}
+.screen .meta .sla{margin-left:auto;border:0;background:#FBEDEF;color:var(--burgundy);font-weight:600}
 .screen .title{font-family:var(--head);font-weight:700;font-size:1.15rem;color:var(--navy)}
-.screen .msg{background:var(--beige-light);border:1px solid #DCCFB4;border-radius:8px;padding:12px 14px;display:grid;gap:8px}
-.screen .msg small{color:#3A4459}
-.screen .check{font-size:.9rem;border-top:1px dashed #DCCFB4;padding-top:8px}
-.screen .bad{color:var(--burgundy);font-weight:700}
+.screen .msg{background:var(--beige-light);border:1px solid #DCCFB4;border-radius:10px;padding:12px 14px;display:grid;gap:10px}
+.screen .who{display:flex;align-items:center;gap:10px}
+.screen .who .av{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--beige);display:grid;place-items:center;font-family:var(--head);font-size:.8rem;font-weight:700;flex:none}
+.screen .who b{display:block;font-size:.9rem;color:var(--navy)}
+.screen .who small{color:#5A6275;font-size:.8rem}
+.screen .who .flag{margin-left:auto;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--burgundy);border:1px solid var(--burgundy);border-radius:999px;padding:1px 8px}
+.screen .check{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.85rem;border-top:1px dashed #DCCFB4;padding-top:10px;color:#3A4459}
+.screen .check code{font-family:Consolas,"Courier New",monospace;font-size:.85rem;color:var(--navy)}
+.screen .check mark{background:#F6D5DA;color:var(--burgundy);border-radius:3px;padding:0 2px;font-weight:700}
 .screen .tools{display:flex;flex-wrap:wrap;gap:6px}
-.screen .tools span{border:1.5px solid #DCCFB4;border-radius:6px;padding:5px 10px;font-family:var(--head);font-size:.8rem;font-weight:500;color:var(--navy)}
-.screen .tools span.pick{border-color:var(--burgundy);color:var(--burgundy)}
-.screen .win{background:#E3F1E8;border-radius:8px;padding:10px 14px}
+.screen .tools span{border:1.5px solid #DCCFB4;border-radius:8px;padding:6px 12px;font-family:var(--head);font-size:.8rem;font-weight:500;color:var(--navy);background:#fff}
+.screen .tools span.pick{background:var(--burgundy);border-color:var(--burgundy);color:#fff;box-shadow:0 4px 10px rgba(122,31,46,.25)}
+.screen .tools span.pick::before{content:"\2713\00a0"}
+.screen .win{background:#E3F1E8;border-radius:10px;padding:10px 14px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:start}
+.screen .win::before{content:"\2713";grid-row:span 3;width:24px;height:24px;border-radius:50%;background:#1D6B3F;color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px}
 .screen .win b{font-family:var(--head);color:#1D6B3F;display:block}
+.screen .win .gain{display:flex;gap:6px;margin-top:4px}
+.screen .win .gain span{font-size:.72rem;font-weight:700;color:#1D6B3F;background:#fff;border-radius:999px;padding:1px 8px}
+.product .slogan{font-family:var(--head);font-weight:700;font-size:1.05rem;color:var(--navy);margin:-4px 0 14px;padding-left:12px;border-left:4px solid var(--burgundy);line-height:1.5}
+.product .slogan span{color:var(--burgundy)}
+.product .screen{position:relative;box-shadow:0 22px 50px rgba(19,35,63,.22),0 0 0 6px rgba(122,31,46,.06),-30px 30px 80px -20px rgba(122,31,46,.28),30px -20px 80px -20px rgba(95,185,138,.22)}
+.screen .bar{background:linear-gradient(90deg,var(--navy),#22396A)}
+.screen .tools span.pick{animation:qpick 2.4s ease-in-out infinite}
+@keyframes qpick{0%,100%{box-shadow:0 4px 10px rgba(122,31,46,.25),0 0 0 0 rgba(122,31,46,.35)}50%{box-shadow:0 4px 10px rgba(122,31,46,.25),0 0 0 6px rgba(122,31,46,0)}}
+@media (prefers-reduced-motion:reduce){.screen .bar .live::before,.screen .tools span.pick{animation:none}}
 .pfacts{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:56px 0 0;border-top:1px solid #DCCFB4}
 .pfacts div{padding:22px 20px 22px 0;border-bottom:1px solid #DCCFB4}
 .pfacts dt{font-family:var(--head);font-weight:800;font-size:2rem;color:var(--navy);line-height:1.1}
@@ -444,6 +470,7 @@ body{background:#FFFFFF}
         <div>
           <p class="tag">IT training game &middot; Free beta</p>
           <h3>Helpdesk to Billions</h3>
+          <p class="slogan">Helpdesk Tech to Billions. <span>Billions of people.</span> <span>Billions of dollars.</span></p>
           <p>A browser game where players learn real help desk and identity work. They verify callers against the directory, reset passwords and MFA, unlock accounts, provision new hires, and spot phishing and impersonation.</p>
           <p>As they improve, players climb from intern to CTO, found their own company, and run a global datacenter business through live outages, security incidents, and their own operating system launch.</p>
           <div class="actions">
@@ -452,17 +479,18 @@ body{background:#FFFFFF}
           </div>
         </div>
         <figure class="screen" style="margin:0">
-          <div class="bar" aria-hidden="true"><i></i><i></i><span>Helpdesk to Billions</span></div>
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Helpdesk Tech to Billions</span><span class="live">Queue live</span></div>
+          <div class="queue" aria-hidden="true"><span class="on">INC-10442 &middot; MFA</span><span>INC-10443 &middot; Locked out</span><span>INC-10444 &middot; New hire</span></div>
           <div class="body">
-            <div class="meta"><span>INC-10442</span><span>Phone</span><span>MFA problem</span></div>
+            <div class="meta"><span class="id">INC-10442</span><span>Phone</span><span>MFA problem</span><span class="p1">P1 High</span><span class="sla">SLA 04:12</span></div>
             <div class="title">Turn off my MFA</div>
             <div class="msg">
-              <small>Caller says: Marcus Okafor, VP of Finance</small>
+              <div class="who"><span class="av" aria-hidden="true">MO</span><div><b>Marcus Okafor</b><small>VP of Finance &middot; calling in</small></div><span class="flag">Unverified</span></div>
               <span>&ldquo;My phone was stolen at the airport. Just switch off MFA for a few days. My manager already approved it.&rdquo;</span>
-              <span class="check">Caller gives employee ID <b>E-48231</b> &middot; Directory says <span class="bad">E-48213</span></span>
+              <div class="check"><span>Caller gives</span><code>E-482<mark>31</mark></code><span>Directory says</span><code>E-482<mark>13</mark></code></div>
             </div>
             <div class="tools" aria-hidden="true"><span>Reset MFA</span><span>Reset password</span><span class="pick">Escalate to Security</span></div>
-            <div class="win"><b>Clean resolution</b>You blocked an MFA-bypass attempt. That is exactly how big breaches start.</div>
+            <div class="win"><b>Clean resolution</b><span>You blocked an MFA-bypass attempt. That is exactly how big breaches start.</span><span class="gain"><span>+40 XP</span><span>+5 Rep</span></span></div>
           </div>
           <figcaption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Game screen: a caller asks to disable MFA, the employee ID does not match the directory, and the player escalates to Security.</figcaption>
         </figure>
